@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Typography, Button, Row, Col } from "antd";
+import * as firebase from "firebase";
+import { firebaseConfig } from "./config";
+const { Text } = Typography;
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+firebase.initializeApp(firebaseConfig);
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      redirect: false
+    };
+  }
+  onRedirect = () => {
+    this.setState({ redirect: true });
+    window.location.assign("http://kenh14.vn");
+  };
+  render() {
+    firebase
+      .database()
+      .ref()
+      .once("value")
+      .then(snapshot => {
+        console.log(snapshot.val(), "snapshot");
+      });
+    return (
+      <Row className="App">
+        <Col span={24}>
+          <header className="App-header">
+            <Text type="warning">Click the button below to redirect</Text>
+            <Button onClick={this.onRedirect} type="primary">
+              Redirect
+            </Button>
+          </header>
+        </Col>
+      </Row>
+    );
+  }
 }
 
 export default App;
