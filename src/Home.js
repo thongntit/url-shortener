@@ -21,7 +21,7 @@ class HomePage extends React.Component {
     if (this.state.url) {
       try {
         let short = makeID(5);
-        let shortUrl = `http://shortitplz.netlify.com/${short}`;
+        let shortUrl = `https://thongnt.space/${short}`;
         firebase
           .database()
           .ref("urlStore")
