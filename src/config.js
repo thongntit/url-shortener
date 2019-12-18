@@ -1,10 +1,10 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyCCAZBUaHRNkQauh8ciPLAxT2xUqFnvpWA",
-    authDomain: "url-shortener-thongnt.firebaseapp.com",
-    databaseURL: "https://url-shortener-thongnt.firebaseio.com",
-    projectId: "url-shortener-thongnt",
-    storageBucket: "url-shortener-thongnt.appspot.com",
-    messagingSenderId: "546205867479",
-    appId: "1:546205867479:web:2c2a91808dbfe27359bf92",
-    measurementId: "G-VGRCFX9KKR"
+    apiKey: process.env.REACT_APP_APIKEY,
+    authDomain: process.env.REACT_APP_AUTHDOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASEURL,
+    projectId: process.env.REACT_APP_PROJECTID,
+    storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+    appId: process.env.REACT_APP_APPID,
+    measurementId: process.env.REACT_APP_MEASUREMENTID,
   };

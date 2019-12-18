@@ -40,6 +40,7 @@ class HomePage extends React.Component {
     return;
   };
   render() {
+    console.log(process.env.REACT_APP_APIKEY)
     console.log(this.state);
     return (
       <Row className="App" type="flex" justify="center" align="middle">
