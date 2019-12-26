@@ -1,20 +1,24 @@
 import React from "react";
-import { Button, Row, Col } from "antd";
+import { Row, Col, Typography } from "antd";
 import logo from "../misc/short-logo.png";
+const { Text } = Typography;
 const AppHeader = () => {
   return (
-    <Row className="app-heaader" type="flex" gutter={[16, 16]}>
-      <Col span={4} id="logo">
-        <img style={{width: 100, height: 100}} src={logo} alt="short-logo" />
+    <Row className="app-heaader" type="flex" gutter={[16, 16]} align="middle">
+      <Col span={6} className="logo-container" id="logo">
+        <img className="logo" src={logo} alt="short-logo" />
       </Col>
       <Col>
-        <Button>What is this?</Button>
+        <Text>Why Short?</Text>
       </Col>
       <Col>
-        <Button>Features</Button>
+        <Text>Solutions</Text>
       </Col>
       <Col>
-        <Button>About me</Button>
+        <Text>Features</Text>
+      </Col>
+      <Col>
+        <Text>About me</Text>
       </Col>
     </Row>
   );

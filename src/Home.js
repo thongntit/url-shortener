@@ -41,42 +41,52 @@ class HomePage extends React.Component {
   };
   render() {
     return (
-      <Row className="App" type="flex" justify="center" align="middle">
+      <Row className="App" type="flex" justify="center">
         <Col span={12}>
-          <Col span={24} id="app-header">
+          <Row span={24} id="app-header">
             <AppHeader />
-          </Col>
-          <Col span={24}>
-            <Row type="flex" gutter={[16, 16]}>
-              <Col gutter={[16, 16]}>
-                <Row type="flex">
-                  <Title>A simple,</Title>
-                </Row>
-                <Row type="flex">
-                  <Title>reliable url shortener</Title>
-                </Row>
-              </Col>
-            </Row>
-            <Row type="flex" gutter={[16, 16]}>
-              <Col span={12} gutter={[16, 16]}>
-                <Row type="flex" justify="center" gutter={[16, 16]}>
-                  <Col span={20}>
-                    <Input placeholder="Link" onChange={this.onChange} />
-                  </Col>
-                  <Col span={4}>
-                    <Button onClick={this.shorten} type="primary">
-                      Generate Link
-                    </Button>
-                  </Col>
-                </Row>
-                <Row type="flex" justify="center" gutter={[16, 16]}>
-                  <Col span={24}>
-                    <Text type="primary">URL: {this.state.shortenUrl}</Text>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Col>
+          </Row>
+          <Row className="app-title" type="flex" gutter={[16, 16]}>
+            <Col gutter={[16, 16]}>
+              <Row type="flex">
+                <Title>A simple,</Title>
+              </Row>
+              <Row type="flex">
+                <Title>reliable url shortener</Title>
+              </Row>
+            </Col>
+          </Row>
+          <Row className="app-body" type="flex" gutter={[16, 16]}>
+            <Col span={24}>
+              <Row type="flex" justify="center" gutter={[0, 16]}>
+                <Col span={20}>
+                  <Input
+                    className="link-input"
+                    placeholder="Paste your loooooooong link here"
+                    onChange={this.onChange}
+                  />
+                </Col>
+                <Col span={4}>
+                  <Button
+                    className="link-button"
+                    onClick={this.shorten}
+                    type="primary"
+                  >
+                    Shorten
+                  </Button>
+                </Col>
+              </Row>
+              <Row type="flex" justify="center" gutter={[16, 16]}>
+                <Col span={24}>
+                  {this.state.shortenUrl ? (
+                    <Text type="primary">
+                      Your shorten URL: {this.state.shortenUrl}
+                    </Text>
+                  ) : null}
+                </Col>
+              </Row>
+            </Col>
+          </Row>
         </Col>
       </Row>
     );
