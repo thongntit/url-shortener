@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
 import { Typography, Button, Row, Col, Input } from "antd";
-import * as firebase from "firebase";
+import firebase from "firebase";
 import { makeID } from "./helper";
-
+import AppHeader from "./AppHeader";
 const { Title, Text } = Typography;
 
 class HomePage extends React.Component {
@@ -40,37 +40,43 @@ class HomePage extends React.Component {
     return;
   };
   render() {
-    console.log(process.env.REACT_APP_APIKEY)
-    console.log(this.state);
     return (
       <Row className="App" type="flex" justify="center" align="middle">
-        <Col span={24}>
-          <Row type="flex" justify="center" gutter={[16, 16]}>
-            <Col span={12} gutter={[16, 16]}>
-              <Row type="flex" justify="center" gutter={[16, 16]}>
-                <Title type="warning">
-                  Paste the input url to the textbox below
-                </Title>
-              </Row>
-              <Row type="flex" justify="center" gutter={[16, 16]}>
-                <Col span={12}>
-                  <Input placeholder="Link" onChange={this.onChange} />
-                </Col>
-              </Row>
-              <Row type="flex" justify="center" gutter={[16, 16]}>
-                <Col span={24}>
-                  <Button onClick={this.shorten} type="primary">
-                    Generate Link
-                  </Button>
-                </Col>
-              </Row>
-              <Row type="flex" justify="center" gutter={[16, 16]}>
-                <Col span={24}>
-                  <Text type="primary">URL: {this.state.shortenUrl}</Text>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
+        <Col span={12}>
+          <Col span={24} id="app-header">
+            <AppHeader />
+          </Col>
+          <Col span={24}>
+            <Row type="flex" gutter={[16, 16]}>
+              <Col gutter={[16, 16]}>
+                <Row type="flex">
+                  <Title>A simple,</Title>
+                </Row>
+                <Row type="flex">
+                  <Title>reliable url shortener</Title>
+                </Row>
+              </Col>
+            </Row>
+            <Row type="flex" gutter={[16, 16]}>
+              <Col span={12} gutter={[16, 16]}>
+                <Row type="flex" justify="center" gutter={[16, 16]}>
+                  <Col span={20}>
+                    <Input placeholder="Link" onChange={this.onChange} />
+                  </Col>
+                  <Col span={4}>
+                    <Button onClick={this.shorten} type="primary">
+                      Generate Link
+                    </Button>
+                  </Col>
+                </Row>
+                <Row type="flex" justify="center" gutter={[16, 16]}>
+                  <Col span={24}>
+                    <Text type="primary">URL: {this.state.shortenUrl}</Text>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Col>
         </Col>
       </Row>
     );
