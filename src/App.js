@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import "./App.scss";
 import HomePage from "./Home";
 import DecodeURL from "./DecodeURL";
-import * as firebase from "firebase";
+import firebase from 'firebase/app';
 import {firebaseConfig} from "./config";
 
 firebase.initializeApp(firebaseConfig);

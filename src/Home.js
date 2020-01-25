@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.scss";
 import {Typography, Button, Row, Col, Input} from "antd";
-import firebase from "firebase";
+import firebase from 'firebase/app';
+import 'firebase/database';
 import {makeID} from "./helper";
 import AppHeader from "./AppHeader";
 import Alert from "sweetalert2"
@@ -37,7 +38,7 @@ class HomePage extends React.Component {
             .child(`${short}`)
             .set({
               originalUrl: this.state.url
-            }).then(resp => console.log(resp));
+            });
         Alert.fire({
           title: "Link của bạn là",
           text: shortUrl,
