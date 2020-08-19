@@ -1,6 +1,6 @@
 # Simple URL Shortener Example
 
-![Deploy](https://github.com/trthong95/url-shortener/workflows/Mainflow/badge.svg)
+![Build & Deploy](https://github.com/trthong95/url-shortener/workflows/Build%20&%20Deploy/badge.svg)
 
 * Shorten url then save the result to Firebase
 * Get the origin url then redirect to it
