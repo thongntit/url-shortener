@@ -1,4 +1,5 @@
 # Simple URL Shortener Example
+# Depricated, don't use this repo because it exploit your firebase token
 
 ![Build & Deploy](https://github.com/trthong95/url-shortener/workflows/Build%20&%20Deploy/badge.svg)
 
@@ -21,6 +22,3 @@ You can find these config in firebase document.
 
 [Firebase config object](https://firebase.google.com/docs/web/setup#config-object)
 
-
-# Demo
-[short.thongnt.space](https://short.thongnt.space)
