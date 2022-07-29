@@ -1,5 +1,5 @@
 # Simple URL Shortener Example
-# Depricated, don't use this repo because it exploit your firebase token
+# Depricated, don't use this repo because it expose your firebase token
 
 ![Build & Deploy](https://github.com/trthong95/url-shortener/workflows/Build%20&%20Deploy/badge.svg)
 
